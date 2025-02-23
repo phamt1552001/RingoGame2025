@@ -1,0 +1,52 @@
+Manager:
+    Screen_Home:
+    Screen_StartGame:
+    Screen_About:
+
+<Layout_Menu>:
+    pos_hint: {'top': 1}
+    size_hint_y: 0.1
+    orientation: 'horizontal'
+    Button:
+        text: 'Start Game'
+        on_press:
+    Button:
+        text: 'High Score'
+        on_press:
+    Button:
+        text: 'Options'
+        on_press: 
+    Button:
+        text: 'Quit'
+        on_press:
+    Button:
+        text: 'About'
+        on_press: app.root.current = 'about'
+<Screen_Home>:
+    name: 'home'
+    BoxLayout:
+        orientation: 'vertical'
+        Layout_Menu:
+        BoxLayout:
+            orientation: 'vertical'
+            Button:
+                text: 'Bắt Đầu Game'
+                on_press: root.manager.current = 'startgame'
+
+<Screen_StartGame>:
+    name: 'startgame'
+    Layout_Menu:
+    FloatLayout:
+        background_color: 0, 0, 0, 1
+        Object_Player:
+
+<Screen_About>:
+    name: 'about'
+    BoxLayout:
+        orientation: 'vertical'
+        Button:
+            text: 'Go to Home Screen'
+            on_press: root.manager.current = 'home'
+        Label_About:
+            
+            
